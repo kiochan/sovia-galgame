@@ -1,22 +1,25 @@
-import assetCatalog from "@/data/assetCatalog.json";
-import type { AssetCatalog, AssetKind, AssetResource, CgEntry } from "./types";
+import bg from "@/data/assets/bg.json";
+import bgm from "@/data/assets/bgm.json";
+import cg from "@/data/assets/cg.json";
+import character from "@/data/assets/character.json";
+import sfx from "@/data/assets/sfx.json";
+import voice from "@/data/assets/voice.json";
+import type { AssetKind, AssetResource, CgEntry } from "./types";
 
-const catalog = assetCatalog as AssetCatalog;
-
-const collections: Record<AssetKind, AssetResource[]> = {
-  background: catalog.backgrounds,
-  bgm: catalog.bgm,
-  voice: catalog.voice,
-  sfx: catalog.sfx,
-  character: catalog.characters,
-  cg: catalog.cg,
+const assets: Record<AssetKind, AssetResource[]> = {
+  background: bg,
+  bgm,
+  voice,
+  sfx,
+  character,
+  cg,
 };
 
 export function getAsset(
   kind: AssetKind,
   id: string
 ): AssetResource | undefined {
-  return collections[kind].find((asset) => asset.id === id);
+  return assets[kind].find((asset) => asset.id === id);
 }
 
 export function resolveAssetSrc(kind: AssetKind, id?: string): string {
@@ -25,7 +28,7 @@ export function resolveAssetSrc(kind: AssetKind, id?: string): string {
 }
 
 export function getGalleryEntries(): CgEntry[] {
-  return catalog.cg.map((entry) => ({
+  return cg.map((entry) => ({
     id: entry.id,
     title: entry.title,
     thumbnail: entry.src,

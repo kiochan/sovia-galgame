@@ -1,0 +1,42 @@
+[
+  {
+    "id": "tower-core",
+    "title": "Tower Core Chamber",
+    "src": "/assets/cg/tower-core-chamber.jpg"
+  },
+  {
+    "id": "dorm-letter",
+    "title": "Dorm Room 204 Letter",
+    "src": "/assets/cg/dorm-room-204-letter.jpg"
+  },
+  {
+    "id": "market-trade",
+    "title": "Market Secret Trade",
+    "src": "/assets/cg/market-secret-trade.jpg"
+  },
+  {
+    "id": "final-front",
+    "title": "Final Front Assault",
+    "src": "/assets/cg/final-front-assault.jpg"
+  },
+  {
+    "id": "final-sneak",
+    "title": "Final Sneak Bridge",
+    "src": "/assets/cg/final-sneak-bridge.jpg"
+  },
+  {
+    "id": "final-talk",
+    "title": "Final Talk Handshake",
+    "src": "/assets/cg/final-talk-handshake.jpg"
+  },
+  {
+    "id": "sovia-factory",
+    "title": "Sovia - Factory",
+    "src": "/assets/cg/sovia-factory-placeholder.jpg"
+  },
+  {
+    "id": "sovia-office",
+    "title": "Sovia - Office",
+    "src": "/assets/cg/sovia-office-placeholder.jpg"
+  }
+]

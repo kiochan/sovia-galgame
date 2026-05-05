@@ -1,0 +1,27 @@
+[
+  {
+    "id": "prologue-dawn",
+    "title": "Prologue Dawn",
+    "src": "/assets/bgm/prologue-dawn.mp3"
+  },
+  {
+    "id": "tower-tense",
+    "title": "Tower Tense",
+    "src": "/assets/bgm/tower-tense.mp3"
+  },
+  {
+    "id": "dorm-echo",
+    "title": "Dorm Echo",
+    "src": "/assets/bgm/dorm-echo.mp3"
+  },
+  {
+    "id": "market-whisper",
+    "title": "Market Whisper",
+    "src": "/assets/bgm/market-whisper.mp3"
+  },
+  {
+    "id": "rain-confrontation",
+    "title": "Rain Confrontation",
+    "src": "/assets/bgm/rain-confrontation.mp3"
+  }
+]

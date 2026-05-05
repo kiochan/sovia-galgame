@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ruined-city-dawn",
+    "title": "Ruined City Dawn",
+    "src": "/assets/backgrounds/ruined-city-dawn.jpg"
+  },
+  {
+    "id": "control-tower-hall",
+    "title": "Control Tower Hall",
+    "src": "/assets/backgrounds/control-tower-hall.jpg"
+  },
+  {
+    "id": "old-dorm-corridor",
+    "title": "Old Dorm Corridor",
+    "src": "/assets/backgrounds/old-dorm-corridor.jpg"
+  },
+  {
+    "id": "north-market-night",
+    "title": "North Market Night",
+    "src": "/assets/backgrounds/north-market-night.jpg"
+  },
+  {
+    "id": "clock-square-rain",
+    "title": "Clock Square Rain",
+    "src": "/assets/backgrounds/clock-square-rain.jpg"
+  }
+]

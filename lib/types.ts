@@ -87,7 +87,6 @@ export interface Settings {
   muted: boolean;
 }
 
-// CG catalog entry
 export interface CgEntry {
   id: string;
   title: string;
@@ -107,13 +106,4 @@ export interface AssetResource {
   id: string;
   title: string;
   src: string;
-}
-
-export interface AssetCatalog {
-  backgrounds: AssetResource[];
-  bgm: AssetResource[];
-  voice: AssetResource[];
-  sfx: AssetResource[];
-  characters: AssetResource[];
-  cg: AssetResource[];
 }

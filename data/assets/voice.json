@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sovia-prologue-003",
+    "title": "Sovia Prologue 003",
+    "src": "/assets/voice/sovia/prologue-003.mp3"
+  },
+  {
+    "id": "sovia-tower-002",
+    "title": "Sovia Tower 002",
+    "src": "/assets/voice/sovia/tower-002.mp3"
+  },
+  {
+    "id": "sovia-dorm-002",
+    "title": "Sovia Dorm 002",
+    "src": "/assets/voice/sovia/dorm-002.mp3"
+  },
+  {
+    "id": "sovia-ending-secret-002",
+    "title": "Sovia Ending Secret 002",
+    "src": "/assets/voice/sovia/ending-secret-002.mp3"
+  }
+]
