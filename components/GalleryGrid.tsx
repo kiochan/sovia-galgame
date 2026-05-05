@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import cgCatalog from "@/data/cgCatalog.json";
+import { getGalleryEntries } from "@/lib/assets";
 import { getUnlockedCgs } from "@/lib/storage";
 import type { CgEntry } from "@/lib/types";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "./GalleryGrid.module.css";
 
-const catalog = cgCatalog as CgEntry[];
+const catalog = getGalleryEntries();
 
 export default function GalleryGrid() {
   const [unlocked, setUnlocked] = useState<string[]>([]);
@@ -26,7 +26,9 @@ export default function GalleryGrid() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <Link href="/" className={styles.back}>← Back</Link>
+        <Link href="/" className={styles.back}>
+          Back
+        </Link>
         <h2 className={styles.title}>CG Gallery</h2>
       </div>
       <div className={styles.grid}>
@@ -47,29 +49,29 @@ export default function GalleryGrid() {
                   className={styles.thumb}
                 />
               ) : (
-                <div className={styles.lockIcon}>🔒</div>
+                <div className={styles.lockIcon}>Locked</div>
               )}
-              <span className={styles.cellTitle}>{isUnlocked ? entry.title : "???"}</span>
+              <span className={styles.cellTitle}>
+                {isUnlocked ? entry.title : "???"}
+              </span>
             </button>
           );
         })}
       </div>
       {preview && (
-        <div
-          className={styles.previewOverlay}
-          role="button"
-          tabIndex={0}
-          onClick={() => setPreview(null)}
-          onKeyDown={(e) => {
-            if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
-              setPreview(null);
-            }
-          }}
-        >
+        <div className={styles.previewOverlay}>
           <div className={styles.previewBox}>
-            <img src={preview.full} alt={preview.title} className={styles.previewImg} />
+            <img
+              src={preview.full}
+              alt={preview.title}
+              className={styles.previewImg}
+            />
             <p className={styles.previewTitle}>{preview.title}</p>
-            <button type="button" className={styles.closeBtn} onClick={() => setPreview(null)}>
+            <button
+              type="button"
+              className={styles.closeBtn}
+              onClick={() => setPreview(null)}
+            >
               Close
             </button>
           </div>

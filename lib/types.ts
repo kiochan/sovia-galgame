@@ -4,8 +4,8 @@ export type ScriptNodeType = "scene" | "dialogue" | "choice" | "cg" | "end";
 export interface SceneNode {
   id: string;
   type: "scene";
-  background?: string;
-  bgm?: string;
+  backgroundId?: string;
+  bgmId?: string;
   next?: string;
 }
 
@@ -14,7 +14,7 @@ export interface DialogueNode {
   type: "dialogue";
   speaker?: string;
   text: string;
-  voice?: string;
+  voiceId?: string;
   next?: string;
 }
 
@@ -32,7 +32,7 @@ export interface ChoiceNode {
 export interface CgNode {
   id: string;
   type: "cg";
-  cg: string;
+  cgId: string;
   unlockCgId?: string;
   next?: string;
 }
@@ -93,4 +93,27 @@ export interface CgEntry {
   title: string;
   thumbnail: string;
   full: string;
+}
+
+export type AssetKind =
+  | "background"
+  | "bgm"
+  | "voice"
+  | "sfx"
+  | "character"
+  | "cg";
+
+export interface AssetResource {
+  id: string;
+  title: string;
+  src: string;
+}
+
+export interface AssetCatalog {
+  backgrounds: AssetResource[];
+  bgm: AssetResource[];
+  voice: AssetResource[];
+  sfx: AssetResource[];
+  characters: AssetResource[];
+  cg: AssetResource[];
 }

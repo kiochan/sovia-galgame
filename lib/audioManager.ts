@@ -1,10 +1,20 @@
 import type { Settings } from "./types";
 
+type AudioResourceType = "bgm" | "voice";
+type MissingAudioReporter = (
+  resourceType: AudioResourceType,
+  src: string
+) => void;
+
 let bgmAudio: HTMLAudioElement | null = null;
 let voiceAudio: HTMLAudioElement | null = null;
 let currentBgmSrc = "";
 
-export function playBgm(src: string, settings: Settings): void {
+export function playBgm(
+  src: string,
+  settings: Settings,
+  onMissing?: MissingAudioReporter
+): void {
   if (!src || settings.muted) {
     stopBgm();
     return;
@@ -13,6 +23,9 @@ export function playBgm(src: string, settings: Settings): void {
   stopBgm();
   currentBgmSrc = src;
   bgmAudio = new Audio(src);
+  bgmAudio.addEventListener("error", () => {
+    onMissing?.("bgm", src);
+  });
   bgmAudio.loop = true;
   bgmAudio.volume = settings.bgmVolume;
   bgmAudio.play().catch(() => {});
@@ -27,10 +40,17 @@ export function stopBgm(): void {
   currentBgmSrc = "";
 }
 
-export function playVoice(src: string, settings: Settings): void {
+export function playVoice(
+  src: string,
+  settings: Settings,
+  onMissing?: MissingAudioReporter
+): void {
   if (!src || settings.muted) return;
   stopVoice();
   voiceAudio = new Audio(src);
+  voiceAudio.addEventListener("error", () => {
+    onMissing?.("voice", src);
+  });
   voiceAudio.volume = settings.voiceVolume;
   voiceAudio.play().catch(() => {});
 }

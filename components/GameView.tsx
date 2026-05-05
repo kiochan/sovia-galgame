@@ -1,7 +1,6 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { resolveAssetSrc } from "@/lib/assets";
 import * as AudioManager from "@/lib/audioManager";
 import { getNodeById, getStartNode } from "@/lib/scriptEngine";
 import {
@@ -20,12 +19,19 @@ import type {
   Script,
   ScriptNode,
 } from "@/lib/types";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import BackgroundLayer from "./BackgroundLayer";
 import CgLayer from "./CgLayer";
 import ChoiceMenu from "./ChoiceMenu";
 import DialogBox from "./DialogBox";
-import SaveSlotList from "./SaveSlotList";
 import styles from "./GameView.module.css";
+import SaveSlotList from "./SaveSlotList";
+
+interface MissingResource {
+  kind: "background" | "cg" | "bgm" | "voice";
+  src: string;
+}
 
 function GameViewInner() {
   const router = useRouter();
@@ -41,9 +47,24 @@ function GameViewInner() {
   const [dialogDone, setDialogDone] = useState(false);
   const [showSave, setShowSave] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [missingResources, setMissingResources] = useState<MissingResource[]>(
+    []
+  );
 
   const settingsRef = useRef(getSettings());
   const scriptRef = useRef<Script | null>(null);
+
+  const reportMissingResource = useCallback(
+    (kind: MissingResource["kind"], src: string) => {
+      setMissingResources((prev) => {
+        if (prev.some((item) => item.kind === kind && item.src === src)) {
+          return prev;
+        }
+        return [...prev, { kind, src }];
+      });
+    },
+    []
+  );
 
   // Load script
   useEffect(() => {
@@ -81,10 +102,12 @@ function GameViewInner() {
 
     if (node.type === "scene") {
       const n = node as SceneNode;
-      if (n.background) setBackground(n.background);
-      if (n.bgm) {
-        setBgm(n.bgm);
-        AudioManager.playBgm(n.bgm, settings);
+      const backgroundSrc = resolveAssetSrc("background", n.backgroundId);
+      const bgmSrc = resolveAssetSrc("bgm", n.bgmId);
+      if (backgroundSrc) setBackground(backgroundSrc);
+      if (bgmSrc) {
+        setBgm(bgmSrc);
+        AudioManager.playBgm(bgmSrc, settings, reportMissingResource);
       }
       // Auto-advance scene node
       if (n.next && scriptRef.current) {
@@ -93,11 +116,14 @@ function GameViewInner() {
       }
     } else if (node.type === "cg") {
       const n = node as CgNode;
-      if (n.cg) setCg(n.cg);
+      const cgSrc = resolveAssetSrc("cg", n.cgId);
+      if (cgSrc) setCg(cgSrc);
       if (n.unlockCgId) {
         unlockCg(n.unlockCgId);
         setUnlockedCgs((prev) =>
-          prev.includes(n.unlockCgId as string) ? prev : [...prev, n.unlockCgId as string]
+          prev.includes(n.unlockCgId as string)
+            ? prev
+            : [...prev, n.unlockCgId as string]
         );
       }
       // Auto-advance cg node
@@ -108,13 +134,14 @@ function GameViewInner() {
     } else if (node.type === "dialogue") {
       const n = node as DialogueNode;
       setDialogDone(false);
-      if (n.voice) {
-        AudioManager.playVoice(n.voice, settings);
+      const voiceSrc = resolveAssetSrc("voice", n.voiceId);
+      if (voiceSrc) {
+        AudioManager.playVoice(voiceSrc, settings, reportMissingResource);
       }
     } else if (node.type === "end") {
       setGameOver(true);
     }
-  }, [node]);
+  }, [node, reportMissingResource]);
 
   const advance = useCallback(() => {
     if (!node || !scriptRef.current) return;
@@ -176,7 +203,11 @@ function GameViewInner() {
     return (
       <div className={styles.gameOver}>
         <h2>— End —</h2>
-        <button type="button" className={styles.menuBtn} onClick={() => router.push("/")}>
+        <button
+          type="button"
+          className={styles.menuBtn}
+          onClick={() => router.push("/")}
+        >
           Return to Menu
         </button>
       </div>
@@ -184,9 +215,22 @@ function GameViewInner() {
   }
 
   return (
-    <div className={styles.wrapper} onClick={handleClick}>
-      <BackgroundLayer src={background} />
-      <CgLayer src={cg} />
+    <div className={styles.wrapper} onMouseUp={handleClick}>
+      <BackgroundLayer src={background} onMissing={reportMissingResource} />
+      <CgLayer src={cg} onMissing={reportMissingResource} />
+
+      {missingResources.length > 0 && (
+        <div className={styles.resourceWarningPanel}>
+          <p className={styles.resourceWarningTitle}>Missing resources</p>
+          <ul className={styles.resourceWarningList}>
+            {missingResources.map((item) => (
+              <li key={`${item.kind}:${item.src}`}>
+                [{item.kind}] {item.src}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {node.type === "choice" && (
         <ChoiceMenu
@@ -210,21 +254,32 @@ function GameViewInner() {
         <button
           type="button"
           className={styles.hudBtn}
-          onClick={(e) => { e.stopPropagation(); setShowSave(true); }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowSave(true);
+          }}
         >
           Save
         </button>
         <button
           type="button"
           className={styles.hudBtn}
-          onClick={(e) => { e.stopPropagation(); router.push("/"); }}
+          onClick={(e) => {
+            e.stopPropagation();
+            router.push("/");
+          }}
         >
           Menu
         </button>
       </div>
 
       {showSave && (
-        <div className={styles.saveOverlay} onClick={(e) => e.stopPropagation()}>
+        <div
+          className={styles.saveOverlay}
+          onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => e.stopPropagation()}
+          role="presentation"
+        >
           <SaveSlotList
             mode="save"
             currentState={gameState}
@@ -239,7 +294,11 @@ function GameViewInner() {
 
 export default function GameView() {
   return (
-    <Suspense fallback={<div style={{ color: "#e8e8f0", padding: "2rem" }}>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div style={{ color: "#e8e8f0", padding: "2rem" }}>Loading...</div>
+      }
+    >
       <GameViewInner />
     </Suspense>
   );

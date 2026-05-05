@@ -1,0 +1,122 @@
+{
+  "backgrounds": [
+    {
+      "id": "ruined-city-dawn",
+      "title": "Ruined City Dawn",
+      "src": "/assets/backgrounds/ruined-city-dawn.jpg"
+    },
+    {
+      "id": "control-tower-hall",
+      "title": "Control Tower Hall",
+      "src": "/assets/backgrounds/control-tower-hall.jpg"
+    },
+    {
+      "id": "old-dorm-corridor",
+      "title": "Old Dorm Corridor",
+      "src": "/assets/backgrounds/old-dorm-corridor.jpg"
+    },
+    {
+      "id": "north-market-night",
+      "title": "North Market Night",
+      "src": "/assets/backgrounds/north-market-night.jpg"
+    },
+    {
+      "id": "clock-square-rain",
+      "title": "Clock Square Rain",
+      "src": "/assets/backgrounds/clock-square-rain.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "prologue-dawn",
+      "title": "Prologue Dawn",
+      "src": "/assets/bgm/prologue-dawn.mp3"
+    },
+    {
+      "id": "tower-tense",
+      "title": "Tower Tense",
+      "src": "/assets/bgm/tower-tense.mp3"
+    },
+    {
+      "id": "dorm-echo",
+      "title": "Dorm Echo",
+      "src": "/assets/bgm/dorm-echo.mp3"
+    },
+    {
+      "id": "market-whisper",
+      "title": "Market Whisper",
+      "src": "/assets/bgm/market-whisper.mp3"
+    },
+    {
+      "id": "rain-confrontation",
+      "title": "Rain Confrontation",
+      "src": "/assets/bgm/rain-confrontation.mp3"
+    }
+  ],
+  "voice": [
+    {
+      "id": "sovia-prologue-003",
+      "title": "Sovia Prologue 003",
+      "src": "/assets/voice/sovia/prologue-003.mp3"
+    },
+    {
+      "id": "sovia-tower-002",
+      "title": "Sovia Tower 002",
+      "src": "/assets/voice/sovia/tower-002.mp3"
+    },
+    {
+      "id": "sovia-dorm-002",
+      "title": "Sovia Dorm 002",
+      "src": "/assets/voice/sovia/dorm-002.mp3"
+    },
+    {
+      "id": "sovia-ending-secret-002",
+      "title": "Sovia Ending Secret 002",
+      "src": "/assets/voice/sovia/ending-secret-002.mp3"
+    }
+  ],
+  "sfx": [],
+  "characters": [],
+  "cg": [
+    {
+      "id": "tower-core",
+      "title": "Tower Core Chamber",
+      "src": "/assets/cg/tower-core-chamber.jpg"
+    },
+    {
+      "id": "dorm-letter",
+      "title": "Dorm Room 204 Letter",
+      "src": "/assets/cg/dorm-room-204-letter.jpg"
+    },
+    {
+      "id": "market-trade",
+      "title": "Market Secret Trade",
+      "src": "/assets/cg/market-secret-trade.jpg"
+    },
+    {
+      "id": "final-front",
+      "title": "Final Front Assault",
+      "src": "/assets/cg/final-front-assault.jpg"
+    },
+    {
+      "id": "final-sneak",
+      "title": "Final Sneak Bridge",
+      "src": "/assets/cg/final-sneak-bridge.jpg"
+    },
+    {
+      "id": "final-talk",
+      "title": "Final Talk Handshake",
+      "src": "/assets/cg/final-talk-handshake.jpg"
+    },
+    {
+      "id": "sovia-factory",
+      "title": "Sovia - Factory",
+      "src": "/assets/cg/sovia-factory-placeholder.jpg"
+    },
+    {
+      "id": "sovia-office",
+      "title": "Sovia - Office",
+      "src": "/assets/cg/sovia-office-placeholder.jpg"
+    }
+  ]
+}

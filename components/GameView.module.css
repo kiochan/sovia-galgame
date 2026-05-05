@@ -85,3 +85,35 @@
   z-index: 50;
   overflow-y: auto;
 }
+
+.resourceWarningPanel {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  max-width: min(90vw, 48rem);
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 160, 120, 0.6);
+  background: rgba(30, 12, 6, 0.78);
+  color: #ffe6d6;
+  z-index: 25;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.resourceWarningTitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resourceWarningList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  word-break: break-all;
+}

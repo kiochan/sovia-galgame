@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   transition: opacity 0.5s ease;
   z-index: 1;
+  overflow: hidden;
 }
 
 .visible {
@@ -14,4 +15,21 @@
 
 .hidden {
   opacity: 0;
+}
+
+.missingHint {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  max-width: min(90vw, 50rem);
+  padding: 0.45rem 0.65rem;
+  color: #ffe7cd;
+  background: rgba(90, 40, 0, 0.72);
+  border: 1px solid rgba(245, 187, 121, 0.8);
+  border-radius: 4px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  z-index: 3;
+  pointer-events: none;
 }
