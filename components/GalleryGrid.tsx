@@ -55,7 +55,17 @@ export default function GalleryGrid() {
         })}
       </div>
       {preview && (
-        <div className={styles.previewOverlay} onClick={() => setPreview(null)} onKeyDown={(e) => e.key === "Escape" && setPreview(null)}>
+        <div
+          className={styles.previewOverlay}
+          role="button"
+          tabIndex={0}
+          onClick={() => setPreview(null)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+              setPreview(null);
+            }
+          }}
+        >
           <div className={styles.previewBox}>
             <img src={preview.full} alt={preview.title} className={styles.previewImg} />
             <p className={styles.previewTitle}>{preview.title}</p>
