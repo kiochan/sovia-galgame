@@ -1,0 +1,48 @@
+.box {
+  position: relative;
+  background: rgba(10, 10, 20, 0.88);
+  border: 1px solid rgba(200, 75, 75, 0.3);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem 1rem;
+  min-height: 110px;
+  backdrop-filter: blur(4px);
+}
+
+.speaker {
+  font-size: 0.85rem;
+  font-family: system-ui, sans-serif;
+  color: #c84b4b;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #e8e8f0;
+}
+
+.cursor {
+  animation: blink 0.8s step-end infinite;
+  color: #c84b4b;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.indicator {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  color: #c84b4b;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
