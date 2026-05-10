@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #0a0a0f;
+  --color-surface: #13131a;
+  --color-border: #2a2a3a;
+  --color-text: #e8e8f0;
+  --color-text-muted: #888899;
+  --color-accent: #c84b4b;
+  --color-accent-hover: #e05555;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --font-main: "Georgia", serif;
+  --font-ui: system-ui, sans-serif;
+  --transition-fast: 0.2s ease;
+  --transition-fade: 0.5s ease;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}

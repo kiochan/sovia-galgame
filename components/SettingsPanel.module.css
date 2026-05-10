@@ -1,0 +1,99 @@
+.wrapper {
+  min-height: 100vh;
+  background: #0a0a0f;
+  color: #e8e8f0;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.back {
+  color: #888899;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: #e8e8f0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-family: "Georgia", serif;
+  letter-spacing: 0.05em;
+}
+
+.panel {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #13131a;
+  border: 1px solid #2a2a3a;
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  width: 130px;
+  font-size: 0.9rem;
+  color: #c8c8d8;
+  flex-shrink: 0;
+}
+
+.slider {
+  flex: 1;
+  accent-color: #c84b4b;
+  cursor: pointer;
+}
+
+.value {
+  width: 70px;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #888899;
+  font-family: monospace;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #c84b4b;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #2a2a3a;
+}
+
+.resetBtn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  color: #e8e8f0;
+  background: rgba(100, 30, 30, 0.2);
+  border: 1px solid rgba(150, 50, 50, 0.4);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  font-family: system-ui, sans-serif;
+}
+
+.resetBtn:hover {
+  background: rgba(150, 40, 40, 0.4);
+  border-color: rgba(180, 60, 60, 0.7);
+}

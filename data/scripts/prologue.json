@@ -1,0 +1,436 @@
+{
+  "id": "prologue",
+  "title": "Prologue: Ashes and Red Starlight",
+  "start": "start",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "scene",
+      "backgroundId": "ruined-city-dawn",
+      "bgmId": "prologue-dawn",
+      "next": "line-001"
+    },
+    {
+      "id": "line-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "Dawn rises like a blunt bayonet, cutting open the smog above the dead capital.",
+      "next": "line-002"
+    },
+    {
+      "id": "line-002",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "You stand at the end of an old rail line. Ahead waits an energy tower that has slept for thirteen winters.",
+      "next": "line-003"
+    },
+    {
+      "id": "line-003",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "At last, Comrade Commander. Today the city will learn your name.",
+      "voiceId": "sovia-prologue-003",
+      "next": "line-004"
+    },
+    {
+      "id": "line-004",
+      "type": "dialogue",
+      "speaker": "You",
+      "text": "All I see is rubble, debt, and ghosts that never clocked out.",
+      "next": "line-005"
+    },
+    {
+      "id": "line-005",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "Rubble and debt are the same ledger. The question is who writes the final line.",
+      "next": "line-006"
+    },
+    {
+      "id": "line-006",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "She places a command chip in your palm. Three routes are etched in red steel.",
+      "next": "choice-001"
+    },
+    {
+      "id": "choice-001",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Route A: March to the Control Tower",
+          "next": "tower-scene-001"
+        },
+        {
+          "text": "Route B: Sweep the Old Dormitory Block",
+          "next": "dorm-scene-001"
+        },
+        {
+          "text": "Route C: Gather intel at North Bank Market",
+          "next": "market-scene-001"
+        }
+      ]
+    },
+    {
+      "id": "tower-scene-001",
+      "type": "scene",
+      "backgroundId": "control-tower-hall",
+      "bgmId": "tower-tense",
+      "next": "tower-line-001"
+    },
+    {
+      "id": "tower-line-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "Only half the tower gate remains. The other half was melted into a twisted iron flower.",
+      "next": "tower-line-002"
+    },
+    {
+      "id": "tower-line-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "This place once lit half a continent. Now it will illuminate the truth.",
+      "voiceId": "sovia-tower-002",
+      "next": "tower-cg-001"
+    },
+    {
+      "id": "tower-cg-001",
+      "type": "cg",
+      "cgId": "tower-core",
+      "unlockCgId": "tower-core",
+      "next": "tower-line-003"
+    },
+    {
+      "id": "tower-line-003",
+      "type": "dialogue",
+      "speaker": "You",
+      "text": "The core chamber is still warm. Someone moved before us.",
+      "next": "tower-choice-001"
+    },
+    {
+      "id": "tower-choice-001",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Access the central command logs",
+          "next": "tower-log-001"
+        },
+        {
+          "text": "Track the escape route on foot",
+          "next": "tower-track-001"
+        }
+      ]
+    },
+    {
+      "id": "tower-log-001",
+      "type": "dialogue",
+      "speaker": "Terminal",
+      "text": "Final record: 'Plan S, Phase Two. Objective transferred to the North Bank sector.'",
+      "next": "tower-log-002"
+    },
+    {
+      "id": "tower-log-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "So they never abandoned it. Move. We regroup at the convergence point.",
+      "next": "mid-scene-001"
+    },
+    {
+      "id": "tower-track-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "The footprints vanish at the stairwell bend. In their place lies a half-burned tactical map.",
+      "next": "tower-track-002"
+    },
+    {
+      "id": "tower-track-002",
+      "type": "dialogue",
+      "speaker": "You",
+      "text": "North Bank. Red marker. Different trail, same destination.",
+      "next": "mid-scene-001"
+    },
+    {
+      "id": "dorm-scene-001",
+      "type": "scene",
+      "backgroundId": "old-dorm-corridor",
+      "bgmId": "dorm-echo",
+      "next": "dorm-line-001"
+    },
+    {
+      "id": "dorm-line-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "Every room plate in the dormitory has been removed with surgical care, leaving only nail scars.",
+      "next": "dorm-line-002"
+    },
+    {
+      "id": "dorm-line-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "Someone wanted history erased, Comrade. That means history was dangerous.",
+      "next": "dorm-choice-001"
+    },
+    {
+      "id": "dorm-choice-001",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Breach the sealed Room 204",
+          "next": "dorm-room-204-001"
+        },
+        {
+          "text": "Check the basement laundry generators",
+          "next": "dorm-laundry-001"
+        }
+      ]
+    },
+    {
+      "id": "dorm-room-204-001",
+      "type": "cg",
+      "cgId": "dorm-letter",
+      "unlockCgId": "dorm-letter",
+      "next": "dorm-room-204-002"
+    },
+    {
+      "id": "dorm-room-204-002",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "On the desk sits an unsent letter: 'If you read this, do not trust the public broadcast.'",
+      "next": "dorm-room-204-003"
+    },
+    {
+      "id": "dorm-room-204-003",
+      "type": "dialogue",
+      "speaker": "You",
+      "text": "The signature was torn off. Only one letter remains: S.",
+      "next": "mid-scene-001"
+    },
+    {
+      "id": "dorm-laundry-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "A generator growls below like a sleeping beast sharpening its teeth.",
+      "next": "dorm-laundry-002"
+    },
+    {
+      "id": "dorm-laundry-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "Three hours of backup power. Enough for one operation and one miracle.",
+      "voiceId": "sovia-dorm-002",
+      "next": "mid-scene-001"
+    },
+    {
+      "id": "market-scene-001",
+      "type": "scene",
+      "backgroundId": "north-market-night",
+      "bgmId": "market-whisper",
+      "next": "market-line-001"
+    },
+    {
+      "id": "market-line-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "The market is officially dead, yet lamps still burn like eyes waiting for a late customer.",
+      "next": "market-line-002"
+    },
+    {
+      "id": "market-line-002",
+      "type": "dialogue",
+      "speaker": "Broker",
+      "text": "Information is expensive tonight. What will the young heroes pay?",
+      "next": "market-choice-001"
+    },
+    {
+      "id": "market-choice-001",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Trade half the chip permissions",
+          "next": "market-chip-001"
+        },
+        {
+          "text": "Bluff with fake military intel",
+          "next": "market-bluff-001"
+        }
+      ]
+    },
+    {
+      "id": "market-chip-001",
+      "type": "dialogue",
+      "speaker": "Broker",
+      "text": "Bold move. Your target will pass the Clocktower Plaza tonight with a portable reactor core.",
+      "next": "market-chip-002"
+    },
+    {
+      "id": "market-chip-002",
+      "type": "cg",
+      "cgId": "market-trade",
+      "unlockCgId": "market-trade",
+      "next": "mid-scene-001"
+    },
+    {
+      "id": "market-bluff-001",
+      "type": "dialogue",
+      "speaker": "You",
+      "text": "We already know about Phase Two. Give coordinates now, or be buried with your secrets.",
+      "next": "market-bluff-002"
+    },
+    {
+      "id": "market-bluff-002",
+      "type": "dialogue",
+      "speaker": "Broker",
+      "text": "Fine. Clocktower Plaza. But listen, hero: that zone only speaks the language of fire.",
+      "next": "mid-scene-001"
+    },
+    {
+      "id": "mid-scene-001",
+      "type": "scene",
+      "backgroundId": "clock-square-rain",
+      "bgmId": "rain-confrontation",
+      "next": "mid-line-001"
+    },
+    {
+      "id": "mid-line-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "Rain strikes the broken clock face. The hand is frozen at 03:17.",
+      "next": "mid-line-002"
+    },
+    {
+      "id": "mid-line-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "This is it. The target is under the tower with a core that can wake the whole district.",
+      "next": "mid-choice-001"
+    },
+    {
+      "id": "mid-choice-001",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Lead a direct assault",
+          "next": "final-front-001"
+        },
+        {
+          "text": "Infiltrate from the broken rear bridge",
+          "next": "final-sneak-001"
+        },
+        {
+          "text": "Negotiate a ceasefire window",
+          "next": "final-talk-001"
+        }
+      ]
+    },
+    {
+      "id": "final-front-001",
+      "type": "cg",
+      "cgId": "final-front",
+      "unlockCgId": "final-front",
+      "next": "final-front-002"
+    },
+    {
+      "id": "final-front-002",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "Muzzle flashes carve white lines through the rain as you and Sovia push into the lower tower.",
+      "next": "final-front-003"
+    },
+    {
+      "id": "final-front-003",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "Core secured. The price was cruel, but the city will see light tonight.",
+      "next": "ending-hope-001"
+    },
+    {
+      "id": "final-sneak-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "You cross the fractured steel bridge one breath at a time, darkness boiling below.",
+      "next": "final-sneak-002"
+    },
+    {
+      "id": "final-sneak-002",
+      "type": "cg",
+      "cgId": "final-sneak",
+      "unlockCgId": "final-sneak",
+      "next": "final-sneak-003"
+    },
+    {
+      "id": "final-sneak-003",
+      "type": "dialogue",
+      "speaker": "You",
+      "text": "Silent capture complete. No alarms. Reactor integrity at one hundred percent.",
+      "next": "ending-calm-001"
+    },
+    {
+      "id": "final-talk-001",
+      "type": "dialogue",
+      "speaker": "Envoy",
+      "text": "You want power, I want tomorrow. Give me safe passage and the core is yours.",
+      "next": "final-talk-002"
+    },
+    {
+      "id": "final-talk-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "Thirty minutes of ceasefire. North gate corridor. That is my final offer, Comrade.",
+      "next": "final-talk-003"
+    },
+    {
+      "id": "final-talk-003",
+      "type": "cg",
+      "cgId": "final-talk",
+      "unlockCgId": "final-talk",
+      "next": "ending-secret-001"
+    },
+    {
+      "id": "ending-hope-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "When the first streetlamp ignites, some cheer and some quietly weep.",
+      "next": "ending-hope-002"
+    },
+    {
+      "id": "ending-hope-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "This is only Episode One. Next time, we light the entire city before sunrise.",
+      "next": "end"
+    },
+    {
+      "id": "ending-calm-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "No cheers. No gunfire. Only the soft hum of current returning to old copper veins.",
+      "next": "ending-calm-002"
+    },
+    {
+      "id": "ending-calm-002",
+      "type": "dialogue",
+      "speaker": "You",
+      "text": "A quiet victory is still a victory. We have many nights left to survive.",
+      "next": "end"
+    },
+    {
+      "id": "ending-secret-001",
+      "type": "dialogue",
+      "speaker": "Narrator",
+      "text": "Core acquired, ceasefire active. Yet as the envoy departs, you spot a crest you know too well.",
+      "next": "ending-secret-002"
+    },
+    {
+      "id": "ending-secret-002",
+      "type": "dialogue",
+      "speaker": "Sovia",
+      "text": "Do not ask now. In the next chapter, I will tell you what Plan S truly means.",
+      "voiceId": "sovia-ending-secret-002",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "type": "end"
+    }
+  ]
+}
